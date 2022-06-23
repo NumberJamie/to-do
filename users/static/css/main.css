@@ -14,3 +14,7 @@ main{
     margin: 3% auto;
     display: block;
 }
+
+.active-link{
+    background-color: #0075FF !important;
+}

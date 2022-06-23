@@ -34,6 +34,27 @@
     background-color: #0075FF;
 }
 
+.double-btn{
+    margin-bottom: 2%;
+}
+
+.double-btn a{
+    background-color: #272B33;
+    width: 45%;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.double-btn a:last-child{
+    float: right;
+}
+
 small {
     color: #8C8C8C;
 }

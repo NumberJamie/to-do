@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 from django.views.generic import ListView, UpdateView, CreateView
 
 from tasks.forms import TaskUpdateForm
-from tasks.models import Tasks
+from tasks.models import Tasks, TaskCategory
 
 
 def mark_completed(request, pk):
@@ -24,6 +24,16 @@ class TaskListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self, *args, **kwargs):
         return Tasks.objects.all().filter(author=self.request.user, complete=False).order_by('-added_on')
+
+
+class CategoryListView(LoginRequiredMixin, ListView):
+    template_name = 'categories/categories.html'
+    paginate_by = 5
+    model = TaskCategory
+    extra_context = {'title': 'todo | categories'}
+
+    def get_queryset(self, *args, **kwargs):
+        return TaskCategory.objects.all().filter(author=self.request.user).order_by('-added_on')
 
 
 class TaskUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):

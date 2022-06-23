@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'snippets/task-buttons.html' %}
+    {% for category in object_list %}
+        <div class="task-card">
+            <h3>{{ category.category_name }}
+                <small class="due-date">{{ category.added_on|timesince }} ago</small>
+            </h3>
+            <small>Due {{ category.due|date }} {{ category.due|time }}</small>
+            <p>{{ category.category_description }}</p>
+        </div>
+    {% endfor %}
+    {% include 'snippets/paginator.html' %}
+{% endblock %}

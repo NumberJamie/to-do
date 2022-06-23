@@ -1,3 +1,4 @@
+{% load active_link_tags %}
 <nav>
     <div class="nav-items-left nav-items">
         <div>
@@ -7,7 +8,7 @@
             </a>
         </div>
         <div>
-            <a href="{% url 'task_list' %}">
+            <a href="{% url 'task_list' %}" class="{% active_link 'task_list' 'active-link' %}">
                 {% include 'icons/tasks.html' %}
                 Open tasks
                 <p class="task-amount">{{ task_amount }}</p>
