@@ -1,0 +1,36 @@
+.login-wrapper{
+    width: 60%;
+    margin: auto;
+}
+
+.login-wrapper input{
+    width: 96%;
+    display: block;
+    background-color: #272B33;
+    color: #FFFFFF;
+    padding: 1% 2%;
+    font-size: 14px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.login-wrapper span{
+    margin-bottom: 2%;
+    color: #8C8C8C;
+    font-size: 12px;
+    display: block;
+}
+
+.login-wrapper button{
+    cursor: pointer;
+    background-color: #0075FF;
+    width: 100%;
+    padding: 1.5% 1%;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFFFFF;
+}
