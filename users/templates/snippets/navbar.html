@@ -7,10 +7,10 @@
             </a>
         </div>
         <div>
-            <a>
+            <a href="{% url 'task_list' %}">
                 {% include 'icons/tasks.html' %}
                 Open tasks
-                <p class="task-amount">2</p>
+                <p class="task-amount">{{ task_amount }}</p>
             </a>
         </div>
         <div>

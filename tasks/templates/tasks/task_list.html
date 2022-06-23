@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for task in object_list %}
+        <div class="task-card">
+            <h3>{{ task.task_name }}
+                <small class="due-date">{{ task.added_on|timesince }} ago</small>
+            </h3>
+            <small>due: {{ task.due|date }} {{ task.due|time }}</small>
+            <p>{{ task.task_description }}</p>
+            <div class="btn-wrapper">
+                <a>edit task</a>
+                <a>mark as completed</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

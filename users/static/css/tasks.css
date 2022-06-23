@@ -1,0 +1,37 @@
+.task-card{
+    background-color: #272B33;
+    display: block;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.task-card p{
+    margin-top: 1%;
+}
+
+.due-date{
+    float: right;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.btn-wrapper a{
+    border: #0075FF 1px solid;
+    width: 45%;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-wrapper a:last-child{
+    float: right;
+    background-color: #0075FF;
+}
+
+small {
+    color: #8C8C8C;
+}
