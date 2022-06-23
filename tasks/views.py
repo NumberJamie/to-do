@@ -1,10 +1,19 @@
 from abc import ABC
 
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.shortcuts import redirect
 from django.views.generic import ListView, UpdateView, CreateView
 
 from tasks.forms import TaskUpdateForm
 from tasks.models import Tasks
+
+
+def mark_completed(request, pk):
+    obj = Tasks.objects.get(pk=pk)
+    if obj.author == request.user:
+        obj.complete = True
+        obj.save()
+        return redirect('task_list')
 
 
 class TaskListView(LoginRequiredMixin, ListView):
@@ -14,7 +23,7 @@ class TaskListView(LoginRequiredMixin, ListView):
     extra_context = {'title': 'todo | tasks'}
 
     def get_queryset(self, *args, **kwargs):
-        return Tasks.objects.all().filter(author=self.request.user).order_by('-added_on')
+        return Tasks.objects.all().filter(author=self.request.user, complete=False).order_by('-added_on')
 
 
 class TaskUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):

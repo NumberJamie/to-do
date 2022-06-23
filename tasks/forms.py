@@ -7,4 +7,4 @@ class TaskUpdateForm(forms.ModelForm):
     class Meta:
         model = Tasks
         fields = '__all__'
-        exclude = ('author', 'added_on', )
+        exclude = ('author', 'added_on', 'complete', )

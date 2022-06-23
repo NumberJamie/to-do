@@ -8,6 +8,7 @@ class Tasks(models.Model):
     task_description = models.TextField()
     added_on = models.DateTimeField(auto_now_add=True)
     due = models.DateTimeField()
+    complete = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.author} | {self.task_name}'

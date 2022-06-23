@@ -12,7 +12,7 @@
             <p>{{ task.task_description }}</p>
             <div class="btn-wrapper">
                 <a href="{% url 'task_update' task.id %}">edit task</a>
-                <a>mark as completed</a>
+                <a href="{% url 'mark_completed' task.id %}">mark as completed</a>
             </div>
         </div>
     {% endfor %}
