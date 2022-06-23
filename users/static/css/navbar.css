@@ -37,6 +37,16 @@ nav{
     float: right;
 }
 
+.task-amount{
+    background-color: #E2554C;
+    border-radius: 100%;
+    height: 18px;
+    width: 18px;
+    text-align: center;
+    margin: auto auto auto 3px;
+    display: inline-block;
+}
+
 .logout-btn{
     background-color: #E2554C !important;
 }
