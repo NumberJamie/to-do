@@ -1,0 +1,41 @@
+.pagination-wrapper{
+    text-align: center;
+    width: 100%;
+    margin-top: 2%;
+}
+
+.pagination{
+    list-style-type: none;
+    margin: auto;
+}
+
+.pagination li{
+    display: inline;
+}
+
+.pagination .active{
+    background-color: #0075FF;
+}
+
+.pagination .disabled svg path{
+    fill: #8C8C8C;
+}
+
+.pagination .disabled{
+    color: #8C8C8C;
+}
+
+.pagination a{
+    text-align: center;
+    color: #FFFFFF;
+    padding: 7px 12px;
+    border-radius: 5px;
+    background-color: #272B33;
+    text-decoration: none;
+}
+
+.pagination svg{
+    position: relative;
+    margin-bottom: -3px;
+    display: inline-block;
+}

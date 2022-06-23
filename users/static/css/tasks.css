@@ -25,6 +25,8 @@
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
 .btn-wrapper a:last-child{
@@ -34,4 +36,16 @@
 
 small {
     color: #8C8C8C;
+}
+
+.big-btn a{
+    background-color: #0075FF;
+    width: 98%;
+    padding: 1%;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFFFFF;
 }

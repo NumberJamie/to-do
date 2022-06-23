@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
+    <div class="big-btn">
+        <a href="{% url 'task_create' %}">Create a new task</a>
+    </div>
     {% for task in object_list %}
         <div class="task-card">
             <h3>{{ task.task_name }}
@@ -8,9 +11,10 @@
             <small>due: {{ task.due|date }} {{ task.due|time }}</small>
             <p>{{ task.task_description }}</p>
             <div class="btn-wrapper">
-                <a>edit task</a>
+                <a href="{% url 'task_update' task.id %}">edit task</a>
                 <a>mark as completed</a>
             </div>
         </div>
     {% endfor %}
+    {% include 'snippets/paginator.html' %}
 {% endblock %}
