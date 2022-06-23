@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% include 'snippets/task-buttons.html' %}
+    {% for task in object_list %}
+        <div class="task-card">
+            <h3>{{ task.task_name }}
+                <small class="due-date">{{ task.added_on|timesince }} ago</small>
+            </h3>
+            <small>Due {{ task.due|date }} {{ task.due|time }}</small>
+            <p>{{ task.task_description }}</p>
+            <div class="btn-wrapper">
+                <a href="{% url 'task_update' task.id %}">edit task</a>
+                {% if task.complete %}
+                    <a disabled>task already complete</a>
+                {% else %}
+                    <a href="{% url 'mark_completed' task.id %}">mark as completed</a>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+    {% include 'snippets/paginator.html' %}
+{% endblock %}

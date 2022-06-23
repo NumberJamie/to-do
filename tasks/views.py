@@ -26,6 +26,16 @@ class TaskListView(LoginRequiredMixin, ListView):
         return Tasks.objects.all().filter(author=self.request.user, complete=False).order_by('-added_on')
 
 
+class AllTaskListView(LoginRequiredMixin, ListView):
+    template_name = 'tasks/all_tasks.html'
+    paginate_by = 5
+    model = Tasks
+    extra_context = {'title': 'todo | all tasks'}
+
+    def get_queryset(self, *args, **kwargs):
+        return Tasks.objects.all().filter(author=self.request.user).order_by('-added_on')
+
+
 class CategoryListView(LoginRequiredMixin, ListView):
     template_name = 'categories/categories.html'
     paginate_by = 5
