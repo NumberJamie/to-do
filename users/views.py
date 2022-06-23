@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def base_render(reqeust):
+    return render(reqeust, 'base.html', {'title': 'todo | base'})

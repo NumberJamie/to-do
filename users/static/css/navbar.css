@@ -1,0 +1,51 @@
+nav{
+    width: 60%;
+    margin: 20px auto 40px auto;
+}
+
+.nav-items div{
+    display: inline-block;
+}
+
+.nav-items a{
+    font-size: 14px;
+    margin: auto 10px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    background-color: #272B33;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.nav-items a:hover{
+    background-color: #0075FF;
+}
+
+.nav-items a svg{
+    display: inline-block;
+    background-color: transparent;
+    margin-right: 5px;
+    position: relative;
+    margin-bottom: -2px;
+}
+
+.nav-items-left{
+    float: left;
+}
+
+.nav-items-right{
+    float: right;
+}
+
+.logout-btn{
+    background-color: #E2554C !important;
+}
+
+.logout-btn:hover{
+    background-color: #0075FF !important;
+}
+
+.logout-btn svg{
+    margin-right: 0 !important;
+    margin-left: 5px
+}
