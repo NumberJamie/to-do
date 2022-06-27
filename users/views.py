@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 
 from tasks.models import Tasks
-from users.forms import UserRegisterForm
+from users.forms import UserRegisterForm, ProfileRegisterForm
 
 
 def task_count(request):
@@ -16,18 +16,19 @@ def task_count(request):
 
 def register(request):
     if request.POST == 'POST':
-        form = UserRegisterForm()
+        form = UserRegisterForm(request.POST)
+        form2 = ProfileRegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if username is not None:
-                login(request, user)
-                return redirect('home')
+            form2.save()
+            user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
+            login(request, user)
+            return redirect('task_list')
     else:
         form = UserRegisterForm()
+        form2 = ProfileRegisterForm()
     context = {
-        'form': form
+        'form': form,
+        'form2': form2
     }
     return render(request, 'users/register.html', context)
