@@ -1,0 +1,18 @@
+{% load active_link_tags %}
+<nav>
+    <div class="nav-items-right nav-items">
+        <div>
+            <a href="{% url 'login' %}" class="{% active_link 'login' 'active-link' %}">
+                {% include 'icons/users.html' %}
+                login
+            </a>
+        </div>
+
+        <div>
+            <a href="{% url 'register' %}" class="{% active_link 'register' 'active-link' %}">
+                {% include 'icons/logout.html' %}
+                Register
+            </a>
+        </div>
+    </div>
+</nav>

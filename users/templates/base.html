@@ -7,7 +7,11 @@
     {% include 'snippets/css.html' %}
 </head>
 <body>
-    {% include 'snippets/navbar.html' %}
+    {% if user.is_authenticated %}
+        {% include 'snippets/navbar.html' %}
+    {% else %}
+        {% include 'snippets/geust-navbar.html' %}
+    {% endif %}
     <main>
         {% block content %}
         {% endblock %}

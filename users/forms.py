@@ -15,18 +15,9 @@ class UserLoginForm(AuthenticationForm):
     error_css_class = 'input-error'
 
 
-class UserRegisterForm(UserCreationForm):
+class UserCreateForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ['username', 'password1', 'password2']
-
-    def __init__(self, *args, **kwargs):
-        super(UserCreationForm, self).__init__(*args, **kwargs)
+        fields = ['username']
 
     error_css_class = 'input-error'
-
-
-class ProfileRegisterForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = ['']

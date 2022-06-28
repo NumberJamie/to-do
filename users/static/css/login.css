@@ -1,9 +1,9 @@
-.login-wrapper{
+.login-wrapper, .create-task{
     width: 60%;
     margin: auto;
 }
 
-.login-wrapper input{
+.login-wrapper input, .create-task input, .cte{
     width: 96%;
     display: block;
     background-color: #272B33;
@@ -15,19 +15,21 @@
     border-radius: 5px;
 }
 
-.login-wrapper span{
+.login-wrapper span, .create-task span{
     margin-bottom: 2%;
     color: #8C8C8C;
     font-size: 12px;
     display: block;
 }
 
-.login-wrapper button{
+.login-wrapper button, .create-task button{
     cursor: pointer;
     background-color: #0075FF;
     width: 100%;
     padding: 1.5% 1%;
     display: inline-block;
+    outline: none;
+    border: none;
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
