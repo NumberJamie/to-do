@@ -51,7 +51,7 @@ class TaskUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Tasks
     extra_context = {'title': 'todo | tasks update'}
     form_class = TaskUpdateForm
-    success_url = 'task_list'
+    success_url = '/tasks'
 
     def test_func(self):
         this_task = self.get_object()
@@ -65,7 +65,7 @@ class TaskCreateView(LoginRequiredMixin, CreateView, ABC):
     model = Tasks
     extra_context = {'title': 'todo | tasks create'}
     form_class = TaskUpdateForm
-    success_url = 'task_list'
+    success_url = '/tasks'
 
     def form_valid(self, form):
         form.instance.author = self.request.user

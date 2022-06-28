@@ -1,5 +1,8 @@
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
+from django.views.generic import ListView
 
 from tasks.models import Tasks
 from users.forms import UserCreateForm
@@ -31,3 +34,13 @@ def register_render(request):
         'title': 'register',
     }
     return render(request, 'users/register.html', context)
+
+
+class UserListView(LoginRequiredMixin, ListView):
+    template_name = 'users/user_list.html'
+    paginate_by = 5
+    model = User
+    extra_context = {'title': 'todo | users'}
+
+    def get_queryset(self, *args, **kwargs):
+        return User.objects.all().filter(is_active=True).order_by('-username')

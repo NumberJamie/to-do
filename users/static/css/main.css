@@ -15,10 +15,6 @@ main{
     display: block;
 }
 
-.disabled{
-    background-color: #8C8C8C !important;
-}
-
 .active-link{
     background-color: #0075FF !important;
 }

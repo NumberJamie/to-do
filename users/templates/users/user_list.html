@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for user in object_list %}
+        <div class="task-card">
+            <h3>{{ user.username }}
+                <small class="due-date">joined {{ user.date_joined|timesince }} ago</small>
+            </h3>
+        </div>
+    {% endfor %}
+    {% include 'snippets/paginator.html' %}
+{% endblock %}
