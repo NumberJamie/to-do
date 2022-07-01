@@ -24,6 +24,12 @@ def add_friend(request, pk):
     return redirect('user_list')
 
 
+def block(request, pk):
+    blocked = User.objects.get(pk=pk)
+    request.user.profile.blocked.add(blocked)
+    return redirect('user_list')
+
+
 def register_render(request):
     if request.method == 'POST':
         form = UserCreateForm(request.POST)

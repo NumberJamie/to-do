@@ -12,6 +12,10 @@
                         {% include 'icons/users.html' %}
                         Add as friend
                     </a>
+                    <a href="{% url 'block' user.pk %}" class="block-btn">
+                        {% include 'icons/logout.html' %}
+                        block
+                    </a>
                 </h3>
             </div>
         {% endif %}

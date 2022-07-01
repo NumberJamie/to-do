@@ -25,3 +25,8 @@
     color: #FFFFFF;
     text-decoration: none;
 }
+
+.block-btn{
+    background-color: #E2554C !important;
+    margin-right: 10px;
+}

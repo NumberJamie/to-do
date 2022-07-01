@@ -11,7 +11,7 @@
             <div class="btn-wrapper">
                 <a href="{% url 'task_update' task.id %}">edit task</a>
                 {% if task.complete %}
-                    <a class="disabled" disabled="True">task already complete</a>
+                    <a class="disabled-task" disabled="True">task already complete</a>
                 {% else %}
                     <a href="{% url 'mark_completed' task.id %}">mark as completed</a>
                 {% endif %}
