@@ -6,6 +6,7 @@ from django.views.generic import ListView
 
 from tasks.models import Tasks
 from users.forms import UserCreateForm
+from users.models import Profile
 
 
 def task_count(request):
@@ -15,6 +16,12 @@ def task_count(request):
             task_amount = '9+'
         return {'task_amount': task_amount}
     return {'': ''}
+
+
+def add_friend(request, pk):
+    friend = User.objects.get(pk=pk)
+    request.user.profile.following.add(friend)
+    return redirect('user_list')
 
 
 def register_render(request):
@@ -43,4 +50,4 @@ class UserListView(LoginRequiredMixin, ListView):
     extra_context = {'title': 'todo | users'}
 
     def get_queryset(self, *args, **kwargs):
-        return User.objects.all().filter(is_active=True).order_by('-username')
+        return User.objects.all().filter(is_active=True).exclude(following__user__in=User.objects.all()).order_by('-username')

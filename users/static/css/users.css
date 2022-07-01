@@ -1,0 +1,27 @@
+.image-wrapper{
+    float: left;
+    height: 70px;
+    width: 70px;
+    overflow: hidden;
+    border-radius: 5px;
+    background-position: center;
+    background-size: cover;
+    display: block;
+}
+
+.user-list h3{
+    margin-left: 80px;
+    height: 70px;
+}
+
+.user-list a{
+    float: right;
+    display: inline;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background: #0075FF;
+    font-size: medium;
+    font-weight: normal;
+    color: #FFFFFF;
+    text-decoration: none;
+}

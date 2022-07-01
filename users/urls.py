@@ -10,4 +10,5 @@ urlpatterns = [
     path('register/', views.register_render, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html', authentication_form=UserLoginForm), name='login'),
     path('users/', views.UserListView.as_view(), name='user_list'),
+    path('users/<int:pk>/add', views.add_friend, name='add_friend'),
 ]

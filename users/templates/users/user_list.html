@@ -1,11 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
     {% for user in object_list %}
-        <div class="task-card">
-            <h3>{{ user.username }}
-                <small class="due-date">joined {{ user.date_joined|timesince }} ago</small>
-            </h3>
-        </div>
+        {% if not user.pk is request.user.pk %}
+            <div class="task-card user-list">
+            <div class="image-wrapper" style="background-image: url('{{ user.profile.profile_picture.url }}')">
+            </div>
+                <h3>{{ user.username }}
+                    <small class="due-date">joined {{ user.date_joined|timesince }} ago</small>
+                    <br>
+                    <a href="{% url 'add_friend' user.pk %}">
+                        {% include 'icons/users.html' %}
+                        Add as friend
+                    </a>
+                </h3>
+            </div>
+        {% endif %}
     {% endfor %}
     {% include 'snippets/paginator.html' %}
 {% endblock %}
