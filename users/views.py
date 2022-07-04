@@ -57,3 +57,19 @@ class UserListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self, *args, **kwargs):
         return User.objects.all().filter(is_active=True).exclude(following__user__in=User.objects.all()).order_by('-username')
+
+
+def custom_page_not_found_view(request, exception):
+    return render(request, "errorpages/404.html", {})
+
+
+def custom_error_view(request, exception=None):
+    return render(request, "errorpages/500.html", {})
+
+
+def custom_permission_denied_view(request, exception=None):
+    return render(request, "errorpages/403.html", {})
+
+
+def custom_bad_request_view(request, exception=None):
+    return render(request, "errorpages/400.html", {})
